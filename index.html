@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Richard Neil Graham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Writing, photographs, and observations — assembled over time." />
+
+  <style>
+    :root{
+      --bg:#111;
+      --panel:#151515;
+      --text:#eee;
+      --muted:#aaa;
+      --line:#333;
+      --link:#66ccff;
+      --accent:#00ffcc;
+      --max:900px;
+      --r:10px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+
+    header{
+      padding:44px 20px 26px;
+      border-bottom:1px solid var(--line);
+      text-align:center;
+    }
+
+    header h1{
+      margin:0;
+      font-size:2.6rem;
+    }
+
+    header p{
+      margin:10px 0 0;
+      color:var(--muted);
+    }
+
+    nav{
+      margin-top:18px;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--text);
+      text-decoration:none;
+    }
+
+    main{
+      max-width:var(--max);
+      margin:36px auto;
+      padding:0 20px 30px;
+    }
+
+    section{
+      margin-bottom:34px;
+      padding:18px;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--r);
+    }
+
+    h2{
+      margin-top:0;
+      border-bottom:1px solid var(--line);
+      padding-bottom:10px;
+    }
+
+    .lede{
+      color:#ddd;
+    }
+
+    figure{
+      margin:22px 0;
+      text-align:center;
+    }
+
+    figure img{
+      width:100%;
+      max-width:720px;
+      height:auto;
+      display:block;
+      margin:0 auto;
+    }
+
+    figcaption{
+      margin-top:8px;
+      font-size:0.95rem;
+      color:var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .card{
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      background:#121212;
+    }
+
+    footer{
+      text-align:center;
+      padding:22px;
+      color:#888;
+      border-top:1px solid var(--line);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Richard Neil Graham</h1>
+  <p>Writing, photographs, and observations — assembled over time</p>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#writing">Writing</a>
+    <a href="#photos">Photos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="about">
+  <h2>About</h2>
+
+  <p class="lede">
+    This site collects writing and photographs made over time — some serious,
+    some satirical, all attentive to place, people, and the small absurdities
+    of everyday life.
+  </p>
+
+  <figure>
+    <img src="images/chiva-porch-forest-grove-2024.jpg" alt="Chiva on a porch in Forest Grove, Oregon">
+    <figcaption>Chiva on a porch. Forest Grove, Oregon.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/chiva-friend-forest-grove-2024.jpg" alt="Chiva with a friend in Forest Grove, Oregon">
+    <figcaption>Chiva and a friend. Forest Grove, Oregon.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/chiva-stump-forest-grove-2024.jpg" alt="Chiva on a stump in Forest Grove, Oregon">
+    <figcaption>Chiva on a stump. Forest Grove, Oregon.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/chiva-sad-forest-grove-2024.jpg" alt="Sad Chiva in Forest Grove, Oregon">
+    <figcaption>Sad Chiva. Forest Grove, Oregon.</figcaption>
+  </figure>
+
+  <div class="grid">
+    <div class="card">
+      <h3>What you’ll find here</h3>
+      <p>Short pieces, longer essays, notes in passing, and projects in progress.</p>
+    </div>
+
+    <div class="card">
+      <h3>Where it’s rooted</h3>
+      <p>Place matters. Memory matters. So does the occasional well-aimed joke.</p>
+    </div>
+  </div>
+</section>
+
+<section id="writing">
+  <h2>Writing</h2>
+  <p>Sections forthcoming.</p>
+</section>
+
+<section id="photos">
+  <h2>Photos</h2>
+  <p>A broader archive coming soon.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    <a href="https://github.com/RichGitsHub" target="_blank" rel="noopener">
+      https://github.com/RichGitsHub
+    </a>
+  </p>
+</section>
+
+</main>
+
+<footer>
+  © 2024 Richard Neil Graham
+</footer>
+
+</body>
+</html>
