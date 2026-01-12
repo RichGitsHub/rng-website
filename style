@@ -88,6 +88,13 @@
     button:hover {
       opacity: 0.85;
     }
+figure img {
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
   </style>
 </head>
 
@@ -161,5 +168,6 @@
 
 </body>
 </html>
+
 
 
