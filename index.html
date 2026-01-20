@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Richard Neil Graham</title>
+  <title>WHEELS — Richard Neil Graham</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Writing, photographs, and observations — assembled over time." />
+  <meta name="description" content="WHEELS — a screenplay by Richard Neil Graham." />
 
   <style>
     :root{
@@ -12,216 +12,251 @@
       --panel:#151515;
       --text:#eee;
       --muted:#aaa;
-      --line:#333;
+      --line:#2a2a2a;
       --link:#66ccff;
-      --accent:#00ffcc;
-      --max:900px;
-      --r:10px;
     }
 
     *{ box-sizing:border-box; }
 
     body{
       margin:0;
+      padding:0;
       font-family: Georgia, "Times New Roman", serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.65;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    .wrap{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
     }
 
     header{
-      padding:44px 20px 26px;
-      border-bottom:1px solid var(--line);
-      text-align:center;
+      text-align: center;
+      padding: 30px 0 20px;
+      border-bottom: 1px solid var(--line);
     }
 
     header h1{
-      margin:0;
-      font-size:2.6rem;
+      margin: 0;
+      font-size: 2.6rem;
+      letter-spacing: 2px;
     }
 
     header p{
-      margin:10px 0 0;
-      color:var(--muted);
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-style: italic;
     }
 
-    nav{
-      margin-top:18px;
-      display:flex;
-      gap:14px;
-      justify-content:center;
-      flex-wrap:wrap;
+    .section{
+      margin-top: 50px;
     }
 
-    nav a{
-      padding:8px 12px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      color:var(--text);
-      text-decoration:none;
+    .section h2{
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
     }
 
-    main{
-      max-width:var(--max);
-      margin:36px auto;
-      padding:0 20px 30px;
+    .panel{
+      background: var(--panel);
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
     }
 
-    section{
-      margin-bottom:34px;
-      padding:18px;
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:var(--r);
+    .panel p{
+      margin-top: 0;
+      margin-bottom: 18px;
     }
 
-    h2{
-      margin-top:0;
-      border-bottom:1px solid var(--line);
-      padding-bottom:10px;
+    /* SCREENPLAY EXCERPT */
+    .excerpt{
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
     }
 
-    .lede{
-      color:#ddd;
+    .excerpt .scene{
+      text-transform: uppercase;
+      margin-bottom: 16px;
     }
 
-    figure{
-      margin:22px 0;
-      text-align:center;
-    }
-figure{
-  margin: 18px 0 24px;
-  text-align: center;
-}
-
-figure img{
-  width: 100%;
-  max-width: 640px;   /* calmer size */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-figcaption{
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-   
-
-    figcaption{
-      margin-top:8px;
-      font-size:0.95rem;
-      color:var(--muted);
+    .excerpt .character{
+      margin-top: 14px;
+      margin-left: 120px;
+      text-transform: uppercase;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:14px;
-      margin-top:18px;
+    .excerpt .dialogue{
+      margin-left: 80px;
+      margin-right: 40px;
     }
 
-    .card{
-      padding:14px;
-      border:1px solid var(--line);
-      border-radius:var(--r);
-      background:#121212;
+    .excerpt .action{
+      margin: 14px 0;
+    }
+
+    .bottom-nav{
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .pill{
+      display: inline-block;
+      margin: 6px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      font-size: 0.95rem;
+      background: transparent;
     }
 
     footer{
-      text-align:center;
-      padding:22px;
-      color:#888;
-      border-top:1px solid var(--line);
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
+  <div class="wrap">
 
-<header>
-  <h1>Richard Neil Graham</h1>
-  <p>Writing, photographs, and observations — assembled over time</p>
+    <header>
+      <h1>WHEELS</h1>
+      <p>A screenplay based on Roller Hockey International</p>
+    </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#writing">Writing</a>
-    <a href="#photos">Photos</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <!-- DESCRIPTION -->
+    <section class="section">
+      <div class="panel">
+        <p>
+          <em>WHEELS</em> is a narrative screenplay drawn from the rise and fall of
+          Roller Hockey International — a league fueled by ambition, money,
+          near-misses, and the belief that the next break was always one shift away.
+        </p>
 
-<main>
+        <p>
+          The story follows players, promoters, and dreamers caught between sport
+          and spectacle, loyalty and opportunity, and the cost of chasing something
+          just out of reach.
+        </p>
+      </div>
+    </section>
 
-<section id="about">
-  <h2>About</h2>
+    <!-- NOTE ON THE WORK -->
+    <section class="section">
+      <h2>A note on the work</h2>
 
-  <p class="lede">
-    This site collects writing and photographs made over time — some serious,
-    some satirical, all attentive to place, people, and the small absurdities
-    of everyday life.
-  </p>
+      <div class="panel">
+        <p>
+          A couple of years ago, I made the difficult decision to put my <em>WHEELS</em>
+          screenplay on the back burner. I had spent three years working on it, on and off,
+          and while there’s strong material in it, much of it was written in the wrong format.
+          It leaned toward a director’s script — and directors don’t tend to welcome direction,
+          especially from a novice screenwriter.
+        </p>
 
-  <figure>
-    <img src="images/chiva-porch-forest-grove-2024.jpg" alt="Chiva on a porch in Forest Grove, Oregon">
-    <figcaption>Chiva on a porch. Forest Grove, Oregon.</figcaption>
-  </figure>
+        <p>
+          I’ve since returned to the project with a clearer sense of the form and the discipline
+          it demands. I’m actively working on <em>WHEELS</em> again now, and I expect to have a
+          sharp, finished script before too much longer.
+        </p>
+      </div>
+    </section>
 
-  <figure>
-    <img src="images/chiva-friend-forest-grove-2024.jpg" alt="Chiva with a friend in Forest Grove, Oregon">
-    <figcaption>Chiva and a friend. Forest Grove, Oregon.</figcaption>
-  </figure>
+    <!-- EXCERPT -->
+    <section class="section">
+      <h2>An excerpt from the screenplay</h2>
 
-  <figure>
-    <img src="images/chiva-stump-forest-grove-2024.jpg" alt="Chiva on a stump in Forest Grove, Oregon">
-    <figcaption>Chiva on a stump. Forest Grove, Oregon.</figcaption>
-  </figure>
+      <div class="panel excerpt">
 
-  <figure>
-    <img src="images/chiva-sad-forest-grove-2024.jpg" alt="Sad Chiva in Forest Grove, Oregon">
-    <figcaption>Sad Chiva. Forest Grove, Oregon.</figcaption>
-  </figure>
+<span class="scene">49 INT. RINK IN LOS ANGELES. TRYOUT CAMP. DAY.</span>
 
-  <div class="grid">
-    <div class="card">
-      <h3>What you’ll find here</h3>
-      <p>Short pieces, longer essays, notes in passing, and projects in progress.</p>
+<span class="character">COACH BOBBY HULL, JR.</span>
+<span class="dialogue">
+There are hundreds of guys trying out today. If you’re not selected by the Los Angeles
+Landsharks, it’s not a slam on you. Most of the team has already been picked, between
+players already on the team, and those selected in the draft. If any of you make it,
+you should be proud.
+</span>
+
+<span class="character">PLAYER WEARING ROLLERBLADES</span>
+<span class="dialogue">
+That doesn’t sound too promising.
+</span>
+
+<span class="character">COACH BOBBY HULL, JR.</span>
+<span class="dialogue">
+If you can’t score, hit somebody. If you can’t hit somebody, score!
+</span>
+
+<span class="character">ASSISTANT COACH</span>
+<span class="dialogue">
+And if you can’t do either, coach.
+</span>
+
+<span class="character">COACH BOBBY HULL, JR.</span>
+<span class="dialogue">
+I heard that.
+</span>
+
+<span class="character">ASSISTANT COACH</span>
+<span class="dialogue">
+OK, first line of red jerseys scrimmage against first line of blue jerseys. Go!
+</span>
+
+<span class="character">COACH BOBBY HULL, JR.</span>
+<span class="dialogue">
+Good thing our team is already mostly set. Some of these guys are delusional if they
+think they’re pro caliber.
+</span>
+
+<span class="character">ASSISTANT COACH</span>
+<span class="dialogue">
+Got that right. Look at Bambi over there.
+</span>
+
+<span class="character">COACH BOBBY HULL, JR.</span>
+<span class="dialogue">
+There’s one guy I’ve got my eye on for a forward. See that kid over there? He’s making
+some impressive passes and scoring some skillful goals. Holy crap! He’s in a fight!
+And he’s holding his own.
+</span>
+
+<span class="character">ASSISTANT COACH</span>
+<span class="dialogue">
+I’d say. The other guy is big, but he’s turtling. He’s done.
+</span>
+
+      </div>
+    </section>
+
+    <div class="bottom-nav">
+      <a class="pill" href="index.html">← Back to Home</a>
     </div>
 
-    <div class="card">
-      <h3>Where it’s rooted</h3>
-      <p>Place matters. Memory matters. So does the occasional well-aimed joke.</p>
-    </div>
+    <footer>
+      © 2026 Richard Neil Graham
+    </footer>
+
   </div>
-</section>
-
-<section id="writing">
-  <h2>Writing</h2>
-  <p>Sections forthcoming.</p>
-</section>
-
-<section id="photos">
-  <h2>Photos</h2>
-  <p>A broader archive coming soon.</p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    <a href="https://github.com/RichGitsHub" target="_blank" rel="noopener">
-      https://github.com/RichGitsHub
-    </a>
-  </p>
-</section>
-
-</main>
-
-<footer>
-  © 2024 Richard Neil Graham
-</footer>
-
 </body>
 </html>
-

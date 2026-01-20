@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Trumpsters &amp; Traitors — Richard Neil Graham</title>
+  <title>Wheelers, Dealers, Pucks &amp; Bucks — Richard Neil Graham</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Trumpsters & Traitors — a two-volume satirical series by Richard Neil Graham." />
+  <meta name="description" content="Wheelers, Dealers, Pucks & Bucks — A Rocking History of Roller Hockey International by Richard Neil Graham." />
 
   <style>
     :root{
@@ -38,7 +38,7 @@
 
     header{
       text-align:center;
-      margin-bottom: 40px;
+      margin-bottom: 34px;
     }
 
     header h1{
@@ -47,22 +47,30 @@
       letter-spacing: 1px;
     }
 
+    .subtitle{
+      margin-top: 12px;
+      font-size: 1.15rem;
+      color: var(--muted);
+    }
+
     .section{
       margin-bottom: 60px;
     }
 
-    .photo-grid{
+    /* Single-cover “statement” layout */
+    .single{
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+      grid-template-columns: 1fr;
+      justify-items: center;
       margin-top: 30px;
     }
 
     figure{
       margin:0;
       background: var(--panel);
-      padding: 15px;
+      padding: 18px;
       border-radius: 4px;
+      width: min(560px, 100%);
     }
 
     .cover-link{
@@ -70,9 +78,9 @@
       text-decoration:none;
     }
 
-    .photo-grid figure img{
+    figure img{
       width: 100%;
-      height: 380px;
+      height: 520px;
       object-fit: contain;
       background: #000;
       display: block;
@@ -102,8 +110,8 @@
     }
 
     @media (max-width: 640px){
-      .photo-grid{
-        grid-template-columns: 1fr;
+      figure img{
+        height: 460px;
       }
     }
   </style>
@@ -113,24 +121,17 @@
   <div class="wrap">
 
     <header>
-      <h1>Trumpsters &amp; Traitors</h1>
+      <h1>Wheelers, Dealers, Pucks &amp; Bucks</h1>
+      <div class="subtitle">A Rocking History of Roller Hockey International</div>
     </header>
 
     <section class="section">
-      <div class="photo-grid">
-
+      <div class="single">
         <figure>
           <a class="cover-link" href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6?shoppingPortalEnabled=true" target="_blank" rel="noopener">
-            <img src="images/trumpsters-traitors-vol-1.jpg" alt="Trumpsters &amp; Traitors Volume One book cover">
+            <img src="images/wdpb-cover.jpg" alt="Wheelers, Dealers, Pucks &amp; Bucks book cover">
           </a>
         </figure>
-
-        <figure>
-          <a class="cover-link" href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6?shoppingPortalEnabled=true" target="_blank" rel="noopener">
-            <img src="images/trumpsters-traitors-vol-2.jpg" alt="Trumpsters &amp; Traitors Volume Two book cover">
-          </a>
-        </figure>
-
       </div>
     </section>
 
@@ -138,7 +139,7 @@
       <div class="bottom-nav">
         <a class="pill" href="index.html">← Back to Home</a>
         <a class="pill" href="graham-cracks.html">Graham Cracks</a>
-        <a class="pill" href="wheelers-dealers-pucks-bucks.html">Wheelers, Dealers, Pucks &amp; Bucks</a>
+        <a class="pill" href="trumpsters-traitors.html">Trumpsters &amp; Traitors</a>
       </div>
       <p style="margin-top:20px;">© 2026 Richard Neil Graham</p>
     </footer>
