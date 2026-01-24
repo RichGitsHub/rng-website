@@ -91,7 +91,37 @@
       color: var(--muted);
     }
 
-    /* === QUADRANT GRID === */
+    /* === PHOTO STRIP === */
+    .photo-strip{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .photo-strip a{
+      display:block;
+      border-radius: 12px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .photo-strip img{
+      width:100%;
+      height: 160px;
+      object-fit: cover;
+      display:block;
+    }
+
+    .photo-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    /* === WRITING GRID === */
     .writing-grid{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -115,7 +145,6 @@
       margin: 0 0 10px;
     }
 
-    /* Force Vault to second row */
     .writing-card.vault{
       border-color: rgba(102,204,255,0.35);
       grid-column: 1 / 2;
@@ -160,7 +189,6 @@
       font-size: 0.95rem;
     }
 
-    /* Mobile fallback */
     @media (max-width: 800px){
       .writing-grid{
         grid-template-columns: 1fr;
@@ -168,6 +196,12 @@
       .writing-card.vault{
         grid-column:auto;
         grid-row:auto;
+      }
+      .photo-strip{
+        grid-template-columns: 1fr 1fr;
+      }
+      .photo-strip img{
+        height: 140px;
       }
     }
   </style>
@@ -189,6 +223,36 @@
       </figure>
     </header>
 
+    <!-- PHOTOGRAPHY -->
+    <section class="section" id="photography">
+      <h2>Photography</h2>
+
+      <div class="panel">
+        <p class="lede">
+          A small rotating set of photographs — starting with Chiva.
+        </p>
+
+        <div class="photo-strip">
+          <a href="./images/chiva-porch-forest-grove-2024.jpg" target="_blank" rel="noopener">
+            <img src="./images/chiva-porch-forest-grove-2024.jpg" alt="Chiva on a porch">
+          </a>
+
+          <a href="./images/chiva-indoors.jpg" target="_blank" rel="noopener">
+            <img src="./images/chiva-indoors.jpg" alt="Chiva indoors">
+          </a>
+
+          <a href="./images/chiva-on-stump.jpg" target="_blank" rel="noopener">
+            <img src="./images/chiva-on-stump.jpg" alt="Chiva on a stump">
+          </a>
+
+          <a href="./images/chiva-running-grass.jpg" target="_blank" rel="noopener">
+            <img src="./images/chiva-running-grass.jpg" alt="Chiva running in grass">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WRITING -->
     <section class="section" id="writing">
       <h2>Writing</h2>
 
@@ -220,7 +284,7 @@
           <article class="writing-card vault">
             <h3><a href="vault.html">The Vault</a></h3>
             <p>
-              Archived writing — college humor columns, magazine features,
+              Archived writing — first-person columns, magazine features,
               and articles from roller/inline hockey and beyond.
             </p>
             <a class="small-link" href="vault.html">Open The Vault →</a>
@@ -235,17 +299,6 @@
           </article>
 
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Continue exploring</h2>
-      <div class="bottom-nav">
-        <a class="pill" href="graham-cracks.html">Graham Cracks</a>
-        <a class="pill" href="trumpsters-traitors.html">Trumpsters &amp; Traitors</a>
-        <a class="pill" href="wheelers-dealers-pucks-bucks.html">
-          Wheelers, Dealers, Pucks &amp; Bucks
-        </a>
       </div>
     </section>
 
