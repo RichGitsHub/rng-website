@@ -163,19 +163,62 @@
       box-shadow:0 0 0 6px rgba(158,203,255,.12), var(--shadow);
     }
 
-    footer{
-      text-align:center;
+    /* NEW: Author photo block */
+    .author-photo{
+      width:min(280px, 85%);
+      border-radius:14px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      display:block;
+      margin:0 auto 12px;
+    }
+
+    .author-caption{
       color:var(--muted);
-      font-size:.9rem;
-      margin-top:80px;
+      font-size:.95rem;
+      margin:0;
+      text-align:center;
+    }
+
+    /* NEW: Links grid */
+    .links-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:14px 26px;
+      margin-top:12px;
+    }
+
+    .links-grid a{
+      display:inline-block;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+      text-align:center;
+    }
+
+    .links-grid a:hover{
+      background:rgba(255,255,255,.05);
+      text-decoration:none;
     }
 
     @media (max-width:900px){
       .photo-grid{ grid-template-columns:repeat(2,1fr); }
     }
 
+    @media (max-width:640px){
+      .links-grid{ grid-template-columns:1fr; }
+    }
+
     @media (max-width:520px){
       .photo-grid{ grid-template-columns:1fr; }
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:.9rem;
+      margin-top:80px;
     }
   </style>
 </head>
@@ -191,23 +234,37 @@
   <nav class="nav">
     <a class="pill" href="#photography">Photography</a>
     <a class="pill" href="#writing">Writing</a>
+    <a class="pill" href="#vault">The Vault</a>
+    <a class="pill" href="#links">Links</a>
     <a class="pill" href="#contact">Contact</a>
   </nav>
 </header>
+
+<!-- AUTHOR (NEW) -->
+<section id="author">
+  <div class="card">
+    <h2>Author</h2>
+    <img class="author-photo"
+         src="images/richard-neil-graham-author.jpg"
+         alt="Richard Neil Graham, author and photographer"
+         loading="lazy">
+    <p class="author-caption">Richard Neil Graham — writer &amp; photographer</p>
+  </div>
+</section>
 
 <section id="photography">
   <div class="card">
     <h2>Photography</h2>
 
     <div class="hero-image">
-      <img src="images/chiva-porch-forest-grove-2024.jpg" alt="Chiva on the porch">
+      <img src="images/chiva-porch-forest-grove-2024.jpg" alt="Chiva on the porch" loading="lazy">
     </div>
 
     <div class="photo-grid">
-      <figure><img src="images/chiva-indoors.jpg"><figcaption>Indoors</figcaption></figure>
-      <figure><img src="images/chiva-on-stump.jpg"><figcaption>On the stump</figcaption></figure>
-      <figure><img src="images/chiva-running-grass.jpg"><figcaption>Full speed</figcaption></figure>
-      <figure><img src="images/chiva-with-friend.jpg"><figcaption>With a friend</figcaption></figure>
+      <figure><img src="images/chiva-indoors.jpg" alt="Chiva indoors" loading="lazy"><figcaption>Indoors</figcaption></figure>
+      <figure><img src="images/chiva-on-stump.jpg" alt="Chiva on the stump" loading="lazy"><figcaption>On the stump</figcaption></figure>
+      <figure><img src="images/chiva-running-grass.jpg" alt="Chiva running on grass" loading="lazy"><figcaption>Full speed</figcaption></figure>
+      <figure><img src="images/chiva-with-friend.jpg" alt="Chiva with a friend" loading="lazy"><figcaption>With a friend</figcaption></figure>
     </div>
   </div>
 </section>
@@ -221,21 +278,59 @@
 
     <div class="subhead">Graham Cracks</div>
     <div class="book-grid">
-      <div class="book"><img src="images/graham-cracks-vol-1.jpg"></div>
-      <div class="book"><img src="images/graham-cracks-vol-2.jpg"></div>
-      <div class="book"><img src="images/graham-cracks-vol-3.jpg"></div>
-      <div class="book"><img src="images/graham-cracks-vol-4.jpg"></div>
+      <div class="book"><img src="images/graham-cracks-vol-1.jpg" alt="Graham Cracks Volume 1" loading="lazy"></div>
+      <div class="book"><img src="images/graham-cracks-vol-2.jpg" alt="Graham Cracks Volume 2" loading="lazy"></div>
+      <div class="book"><img src="images/graham-cracks-vol-3.jpg" alt="Graham Cracks Volume 3" loading="lazy"></div>
+      <div class="book"><img src="images/graham-cracks-vol-4.jpg" alt="Graham Cracks Volume 4" loading="lazy"></div>
     </div>
 
     <div class="subhead">Trumpsters &amp; Traitors</div>
     <div class="book-grid">
-      <div class="book"><img src="images/trumpsters-traitors-vol-1.jpg"></div>
-      <div class="book"><img src="images/trumpsters-traitors-vol-2.jpg"></div>
+      <div class="book"><img src="images/trumpsters-traitors-vol-1.jpg" alt="Trumpsters &amp; Traitors Volume 1" loading="lazy"></div>
+      <div class="book"><img src="images/trumpsters-traitors-vol-2.jpg" alt="Trumpsters &amp; Traitors Volume 2" loading="lazy"></div>
     </div>
 
     <div class="subhead">Wheelers, Dealers, Pucks &amp; Bucks</div>
     <div class="book-grid single">
-      <div class="book"><img src="images/wdpb-cover.jpg"></div>
+      <div class="book"><img src="images/wdpb-cover.jpg" alt="Wheelers, Dealers, Pucks &amp; Bucks" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE VAULT (NEW) -->
+<section id="vault">
+  <div class="card">
+    <h2>The Vault</h2>
+    <p class="section-intro" style="color:var(--muted); margin-top:0;">
+      A growing archive of earlier work — columns, features, and essays from magazines, sports publications, and independent outlets.
+    </p>
+
+    <div style="max-width:680px; margin:0 auto; color:var(--muted); text-align:center;">
+      Triathlete • Roller Hockey • InLine Hockey News • InlineHockeyCentral.com • Sports Afield • College humor columns
+    </div>
+  </div>
+</section>
+
+<!-- LINKS (NEW) -->
+<section id="links">
+  <div class="card">
+    <h2>Links</h2>
+
+    <div class="links-grid">
+      <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=7225b55b-6a63-45b2-a58a-9170cc421cf5" target="_blank" rel="noopener">Amazon Author Store</a>
+      <a href="https://www.aol.com" target="_blank" rel="noopener">AOL</a>
+
+      <a href="https://richardngraham.blogspot.com/" target="_blank" rel="noopener">Blogspot</a>
+      <a href="https://www.chatgpt.com" target="_blank" rel="noopener">ChatGPT</a>
+
+      <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+
+      <a href="https://www.google.com" target="_blank" rel="noopener">Google</a>
+      <a href="https://www.facebook.com/HopeCinema/" target="_blank" rel="noopener">Hope Cinema</a>
+
+      <a href="https://www.facebook.com/p/Hope-Icebreakers-Hockey-100070173571445/" target="_blank" rel="noopener">Hope Icebreakers</a>
+      <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a>
     </div>
   </div>
 </section>
