@@ -158,12 +158,16 @@
 
     .book img{ width:100%; display:block; }
 
+    /* Make book covers clickable without changing layout */
+    .book a{ display:block; }
+    .book a:hover{ text-decoration:none; }
+
     #contact:target .card{
       outline:2px solid rgba(158,203,255,.55);
       box-shadow:0 0 0 6px rgba(158,203,255,.12), var(--shadow);
     }
 
-    /* NEW: Author photo block */
+    /* Author photo block */
     .author-photo{
       width:min(280px, 85%);
       border-radius:14px;
@@ -180,7 +184,7 @@
       text-align:center;
     }
 
-    /* NEW: Links grid */
+    /* Links grid */
     .links-grid{
       display:grid;
       grid-template-columns:repeat(2, minmax(0, 1fr));
@@ -210,6 +214,7 @@
       .links-grid{ grid-template-columns:1fr; }
     }
 
+    /* FIXED: this media query was broken in the pasted file */
     @media (max-width:520px){
       .photo-grid{ grid-template-columns:1fr; }
     }
@@ -240,7 +245,7 @@
   </nav>
 </header>
 
-<!-- AUTHOR (NEW) -->
+<!-- AUTHOR -->
 <section id="author">
   <div class="card">
     <h2>Author</h2>
@@ -278,26 +283,54 @@
 
     <div class="subhead">Graham Cracks</div>
     <div class="book-grid">
-      <div class="book"><img src="images/graham-cracks-vol-1.jpg" alt="Graham Cracks Volume 1" loading="lazy"></div>
-      <div class="book"><img src="images/graham-cracks-vol-2.jpg" alt="Graham Cracks Volume 2" loading="lazy"></div>
-      <div class="book"><img src="images/graham-cracks-vol-3.jpg" alt="Graham Cracks Volume 3" loading="lazy"></div>
-      <div class="book"><img src="images/graham-cracks-vol-4.jpg" alt="Graham Cracks Volume 4" loading="lazy"></div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/graham-cracks-vol-1.jpg" alt="Graham Cracks Volume 1" loading="lazy">
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/graham-cracks-vol-2.jpg" alt="Graham Cracks Volume 2" loading="lazy">
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/graham-cracks-vol-3.jpg" alt="Graham Cracks Volume 3" loading="lazy">
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/graham-cracks-vol-4.jpg" alt="Graham Cracks Volume 4" loading="lazy">
+        </a>
+      </div>
     </div>
 
     <div class="subhead">Trumpsters &amp; Traitors</div>
     <div class="book-grid">
-      <div class="book"><img src="images/trumpsters-traitors-vol-1.jpg" alt="Trumpsters &amp; Traitors Volume 1" loading="lazy"></div>
-      <div class="book"><img src="images/trumpsters-traitors-vol-2.jpg" alt="Trumpsters &amp; Traitors Volume 2" loading="lazy"></div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/trumpsters-traitors-vol-1.jpg" alt="Trumpsters &amp; Traitors Volume 1" loading="lazy">
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/trumpsters-traitors-vol-2.jpg" alt="Trumpsters &amp; Traitors Volume 2" loading="lazy">
+        </a>
+      </div>
     </div>
 
     <div class="subhead">Wheelers, Dealers, Pucks &amp; Bucks</div>
     <div class="book-grid single">
-      <div class="book"><img src="images/wdpb-cover.jpg" alt="Wheelers, Dealers, Pucks &amp; Bucks" loading="lazy"></div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/wdpb-cover.jpg" alt="Wheelers, Dealers, Pucks &amp; Bucks" loading="lazy">
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- THE VAULT (NEW) -->
+<!-- THE VAULT -->
 <section id="vault">
   <div class="card">
     <h2>The Vault</h2>
@@ -311,26 +344,26 @@
   </div>
 </section>
 
-<!-- LINKS (NEW) -->
+<!-- LINKS -->
 <section id="links">
   <div class="card">
     <h2>Links</h2>
 
     <div class="links-grid">
-      <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=7225b55b-6a63-45b2-a58a-9170cc421cf5" target="_blank" rel="noopener">Amazon Author Store</a>
-      <a href="https://www.aol.com" target="_blank" rel="noopener">AOL</a>
+      <!-- Amazon removed (slot freed up) -->
+      <a href="https://www.aol.com" target="_blank" rel="noopener noreferrer">AOL</a>
 
-      <a href="https://richardngraham.blogspot.com/" target="_blank" rel="noopener">Blogspot</a>
-      <a href="https://www.chatgpt.com" target="_blank" rel="noopener">ChatGPT</a>
+      <a href="https://richardngraham.blogspot.com/" target="_blank" rel="noopener noreferrer">Blogspot</a>
+      <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT</a>
 
-      <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
 
-      <a href="https://www.google.com" target="_blank" rel="noopener">Google</a>
-      <a href="https://www.facebook.com/HopeCinema/" target="_blank" rel="noopener">Hope Cinema</a>
+      <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+      <a href="https://www.facebook.com/HopeCinema/" target="_blank" rel="noopener noreferrer">Hope Cinema</a>
 
-      <a href="https://www.facebook.com/p/Hope-Icebreakers-Hockey-100070173571445/" target="_blank" rel="noopener">Hope Icebreakers</a>
-      <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.facebook.com/p/Hope-Icebreakers-Hockey-100070173571445/" target="_blank" rel="noopener noreferrer">Hope Icebreakers</a>
+      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
   </div>
 </section>
