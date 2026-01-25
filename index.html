@@ -1,311 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Richard Neil Graham</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Writing and photography by Richard Neil Graham." />
 
   <style>
     :root{
-      --bg:#111;
-      --panel:#151515;
-      --text:#eee;
-      --muted:#aaa;
-      --line:#2a2a2a;
-      --link:#66ccff;
+      --bg:#0b0c10;
+      --text:#e9e9ef;
+      --muted:rgba(233,233,239,.72);
+      --card:rgba(255,255,255,.035);
+      --border:rgba(255,255,255,.12);
+      --shadow:0 18px 70px rgba(0,0,0,.65);
+      --shadowSoft:0 10px 30px rgba(0,0,0,.45);
+      --radius:16px;
+      --max:980px;
+      --link:#9ecbff;
+      --pill:rgba(255,255,255,.08);
+      --pillHover:rgba(255,255,255,.14);
     }
 
     *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
 
     body{
       margin:0;
-      padding:0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      font-family:Georgia,"Times New Roman",serif;
+      background:radial-gradient(circle at top,#151822,var(--bg));
+      color:var(--text);
+      line-height:1.6;
     }
 
-    a{ color: var(--link); text-decoration:none; }
+    a{ color:var(--link); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 40px 20px;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:48px 20px 80px;
     }
 
     header{
-      margin-bottom: 30px;
+      text-align:center;
+      margin-bottom:54px;
     }
 
     h1{
-      margin: 0 0 10px;
-      font-size: 2.1rem;
-      letter-spacing: 0.3px;
+      font-size:clamp(2.2rem,4vw,3.2rem);
+      margin:0 0 10px;
     }
 
-    .intro{
-      color: var(--muted);
-      max-width: 70ch;
-      margin-bottom: 22px;
+    .tagline{ color:var(--muted); margin-bottom:14px; }
+    .intro{ max-width:680px; margin:0 auto 24px; color:var(--muted); }
+
+    .nav{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--pill);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      font-size:.95rem;
+      cursor:pointer;
+    }
+
+    .pill:hover{ background:var(--pillHover); }
+
+    section{
+      margin-bottom:64px;
+      scroll-margin-top:40px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    /* CENTER ALL SECTION TEXT */
+    h2,
+    .subhead,
+    .section-intro,
+    #contact{
+      text-align:center;
+    }
+
+    h2{ margin:0 0 12px; font-size:1.55rem; }
+    .subhead{ margin:26px 0 10px; font-size:1.15rem; }
+
+    .hero-image img{
+      width:100%;
+      max-height:520px;
+      object-fit:cover;
+      border-radius:18px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      margin-bottom:22px;
+      display:block;
+    }
+
+    .photo-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
     }
 
     figure{
-      margin: 0 0 30px;
+      margin:0;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadowSoft);
+      background:rgba(255,255,255,.02);
     }
 
     figure img{
       width:100%;
-      height:auto;
-      border-radius: 14px;
-      border: 1px solid var(--line);
+      height:210px;
+      object-fit:cover;
       display:block;
     }
 
     figcaption{
-      margin-top: 8px;
-      font-size: 0.95rem;
-      color: var(--muted);
+      padding:10px;
+      color:var(--muted);
+      font-size:.9rem;
+      text-align:center;
     }
 
-    .section{
-      margin-top: 36px;
+    .book-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(130px,150px));
+      gap:20px;
+      justify-content:center;
+      margin-top:14px;
     }
 
-    .section h2{
-      margin-bottom: 12px;
-      font-size: 1.5rem;
-    }
+    .book-grid.single{ grid-template-columns:150px; }
 
-    .panel{
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px;
-    }
-
-    .lede{
-      margin: 0 0 16px;
-      color: var(--muted);
-    }
-
-    /* === PHOTO STRIP === */
-    .photo-strip{
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .photo-strip a{
-      display:block;
-      border-radius: 12px;
+    .book{
+      border-radius:12px;
       overflow:hidden;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.02);
+      border:1px solid var(--border);
+      box-shadow:var(--shadowSoft);
+      background:rgba(255,255,255,.02);
     }
 
-    .photo-strip img{
-      width:100%;
-      height: 160px;
-      object-fit: cover;
-      display:block;
-    }
+    .book img{ width:100%; display:block; }
 
-    .photo-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    /* === WRITING GRID === */
-    .writing-grid{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-      gap: 14px;
-    }
-
-    .writing-card{
-      background: rgba(255,255,255,0.02);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 14px;
-    }
-
-    .writing-card h3{
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-    }
-
-    .writing-card p{
-      margin: 0 0 10px;
-    }
-
-    .writing-card.vault{
-      border-color: rgba(102,204,255,0.35);
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-    }
-
-    .vault-list{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .vault-list .muted{
-      opacity: 0.85;
-    }
-
-    .small-link{
-      font-size: 0.95rem;
-    }
-
-    .bottom-nav{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .pill{
-      display:inline-block;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.02);
+    #contact:target .card{
+      outline:2px solid rgba(158,203,255,.55);
+      box-shadow:0 0 0 6px rgba(158,203,255,.12), var(--shadow);
     }
 
     footer{
-      margin-top: 40px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.95rem;
+      text-align:center;
+      color:var(--muted);
+      font-size:.9rem;
+      margin-top:80px;
     }
 
-    @media (max-width: 800px){
-      .writing-grid{
-        grid-template-columns: 1fr;
-      }
-      .writing-card.vault{
-        grid-column:auto;
-        grid-row:auto;
-      }
-      .photo-strip{
-        grid-template-columns: 1fr 1fr;
-      }
-      .photo-strip img{
-        height: 140px;
-      }
+    @media (max-width:900px){
+      .photo-grid{ grid-template-columns:repeat(2,1fr); }
+    }
+
+    @media (max-width:520px){
+      .photo-grid{ grid-template-columns:1fr; }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <header>
-      <h1>Richard Neil Graham</h1>
-      <p class="intro">
-        This site collects my writing and photography. Feel free to browse.
-      </p>
+<header>
+  <h1>Richard Neil Graham</h1>
+  <div class="tagline">Writing. Photography. Works in Progress.</div>
+  <div class="intro">A home base for my books, scripts, photos, and ongoing projects.</div>
 
-      <figure>
-        <img src="./images/chiva-porch-forest-grove-2024.jpg"
-             alt="Chiva on a porch in Forest Grove, Oregon">
-        <figcaption>Chiva on a porch. Forest Grove, Oregon.</figcaption>
-      </figure>
-    </header>
+  <nav class="nav">
+    <a class="pill" href="#photography">Photography</a>
+    <a class="pill" href="#writing">Writing</a>
+    <a class="pill" href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <!-- PHOTOGRAPHY -->
-    <section class="section" id="photography">
-      <h2>Photography</h2>
+<section id="photography">
+  <div class="card">
+    <h2>Photography</h2>
 
-      <div class="panel">
-        <p class="lede">
-          A small rotating set of photographs — starting with Chiva.
-        </p>
+    <div class="hero-image">
+      <img src="images/chiva-porch-forest-grove-2024.jpg" alt="Chiva on the porch">
+    </div>
 
-        <div class="photo-strip">
-          <a href="./images/chiva-porch-forest-grove-2024.jpg" target="_blank" rel="noopener">
-            <img src="./images/chiva-porch-forest-grove-2024.jpg" alt="Chiva on a porch">
-          </a>
-
-          <a href="./images/chiva-indoors.jpg" target="_blank" rel="noopener">
-            <img src="./images/chiva-indoors.jpg" alt="Chiva indoors">
-          </a>
-
-          <a href="./images/chiva-on-stump.jpg" target="_blank" rel="noopener">
-            <img src="./images/chiva-on-stump.jpg" alt="Chiva on a stump">
-          </a>
-
-          <a href="./images/chiva-running-grass.jpg" target="_blank" rel="noopener">
-            <img src="./images/chiva-running-grass.jpg" alt="Chiva running in grass">
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- WRITING -->
-    <section class="section" id="writing">
-      <h2>Writing</h2>
-
-      <div class="panel">
-        <p class="lede">
-          Books, works in progress, and archived writing — organized for easy wandering.
-        </p>
-
-        <div class="writing-grid">
-
-          <article class="writing-card">
-            <h3><a href="graham-cracks.html">Graham Cracks</a></h3>
-            <p>Humor writing — turning beer into literature, one crack at a time.</p>
-            <a class="small-link" href="graham-cracks.html">Explore Graham Cracks →</a>
-          </article>
-
-          <article class="writing-card">
-            <h3><a href="trumpsters-traitors.html">Trumpsters &amp; Traitors</a></h3>
-            <p>Satire and political humor — sharp, irreverent, and proudly impolite.</p>
-            <a class="small-link" href="trumpsters-traitors.html">Explore Trumpsters &amp; Traitors →</a>
-          </article>
-
-          <article class="writing-card">
-            <h3><a href="wheelers-dealers-pucks-bucks.html">Wheelers, Dealers, Pucks &amp; Bucks</a></h3>
-            <p>A work in progress: a screenplay rooted in Roller Hockey International.</p>
-            <a class="small-link" href="wheelers-dealers-pucks-bucks.html">Explore Wheels →</a>
-          </article>
-
-          <article class="writing-card vault">
-            <h3><a href="vault.html">The Vault</a></h3>
-            <p>
-              Archived writing — first-person columns, magazine features,
-              and articles from roller/inline hockey and beyond.
-            </p>
-            <a class="small-link" href="vault.html">Open The Vault →</a>
-            <ul class="vault-list">
-              <li>Triathlete</li>
-              <li>Roller Hockey</li>
-              <li>InLine Hockey News</li>
-              <li>InlineHockeyCentral.com</li>
-              <li>Sports Afield</li>
-              <li class="muted">…and others</li>
-            </ul>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 Richard Neil Graham
-    </footer>
-
+    <div class="photo-grid">
+      <figure><img src="images/chiva-indoors.jpg"><figcaption>Indoors</figcaption></figure>
+      <figure><img src="images/chiva-on-stump.jpg"><figcaption>On the stump</figcaption></figure>
+      <figure><img src="images/chiva-running-grass.jpg"><figcaption>Full speed</figcaption></figure>
+      <figure><img src="images/chiva-with-friend.jpg"><figcaption>With a friend</figcaption></figure>
+    </div>
   </div>
+</section>
+
+<section id="writing">
+  <div class="card">
+    <h2>Writing</h2>
+    <p class="section-intro" style="color:var(--muted);">
+      Humor, satire, and long-form projects in progress — plus the occasional detour into civic absurdity.
+    </p>
+
+    <div class="subhead">Graham Cracks</div>
+    <div class="book-grid">
+      <div class="book"><img src="images/graham-cracks-vol-1.jpg"></div>
+      <div class="book"><img src="images/graham-cracks-vol-2.jpg"></div>
+      <div class="book"><img src="images/graham-cracks-vol-3.jpg"></div>
+      <div class="book"><img src="images/graham-cracks-vol-4.jpg"></div>
+    </div>
+
+    <div class="subhead">Trumpsters &amp; Traitors</div>
+    <div class="book-grid">
+      <div class="book"><img src="images/trumpsters-traitors-vol-1.jpg"></div>
+      <div class="book"><img src="images/trumpsters-traitors-vol-2.jpg"></div>
+    </div>
+
+    <div class="subhead">Wheelers, Dealers, Pucks &amp; Bucks</div>
+    <div class="book-grid single">
+      <div class="book"><img src="images/wdpb-cover.jpg"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>
+      <a href="mailto:richardneilgraham@gmail.com">
+        <strong>richardneilgraham@gmail.com</strong>
+      </a>
+    </p>
+  </div>
+</section>
+
+<footer>© 2026 Richard Neil Graham</footer>
+
+</div>
 </body>
 </html>
