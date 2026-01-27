@@ -202,6 +202,35 @@
       text-decoration:none;
     }
 
+    /* Contact: subtle copy button */
+    .contact-line{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:0;
+    }
+
+    .copy-btn{
+      padding:8px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+      color:var(--text);
+      cursor:pointer;
+      font-family:inherit;
+      font-size:.95rem;
+    }
+
+    .copy-btn:hover{ background:rgba(255,255,255,.05); }
+
+    .copy-status{
+      color:var(--muted);
+      font-size:.95rem;
+      margin:10px 0 0;
+    }
+
     @media (max-width:900px){
       .photo-grid{ grid-template-columns:repeat(2,1fr); }
     }
@@ -310,9 +339,12 @@
 <section id="contact">
   <div class="card">
     <h2>Contact</h2>
-    <p>
-      <span id="email"></span>
+
+    <p class="contact-line">
+      <strong><span id="emailText"></span></strong>
+      <button class="copy-btn" id="copyEmailBtn" type="button">Copy</button>
     </p>
+    <p class="copy-status" id="copyStatus" aria-live="polite"></p>
   </div>
 </section>
 
@@ -322,12 +354,46 @@
 
 <script>
   (function(){
+    // Bot-resistant: do NOT place the full email in the HTML.
     const user = "richardneilgraham";
     const domain = "gmail.com";
     const email = user + "@" + domain;
 
-    const el = document.getElementById("email");
-    el.innerHTML = '<a href="mailto:' + email + '"><strong>' + email + '</strong></a>';
+    const emailEl = document.getElementById("emailText");
+    const btn = document.getElementById("copyEmailBtn");
+    const statusEl = document.getElementById("copyStatus");
+
+    emailEl.textContent = email;
+
+    function setStatus(msg){
+      statusEl.textContent = msg;
+      if (msg) setTimeout(function(){ statusEl.textContent = ""; }, 2200);
+    }
+
+    async function copyEmail(){
+      try{
+        if (navigator.clipboard && navigator.clipboard.writeText){
+          await navigator.clipboard.writeText(email);
+          setStatus("Copied.");
+          return;
+        }
+        // Fallback
+        const ta = document.createElement("textarea");
+        ta.value = email;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        setStatus("Copied.");
+      }catch(e){
+        setStatus("Copy failed — please select and copy.");
+      }
+    }
+
+    btn.addEventListener("click", copyEmail);
   })();
 </script>
 
