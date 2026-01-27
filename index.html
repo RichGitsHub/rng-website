@@ -87,6 +87,7 @@
       box-shadow:var(--shadow);
     }
 
+    /* Center all section text */
     h2,
     .subhead,
     .section-intro,
@@ -97,6 +98,25 @@
     h2{ margin:0 0 12px; font-size:1.55rem; }
     .subhead{ margin:26px 0 10px; font-size:1.15rem; }
 
+    /* Author block */
+    .author-photo{
+      width:min(280px, 85%);
+      border-radius:14px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      display:block;
+      margin:0 auto 14px;
+    }
+
+    .author-bio{
+      max-width:700px;
+      margin:0 auto;
+      color:var(--muted);
+      text-align:center;
+      font-size:1.05rem;
+    }
+
+    /* Photography */
     .hero-image img{
       width:100%;
       max-height:520px;
@@ -137,6 +157,7 @@
       text-align:center;
     }
 
+    /* Books */
     .book-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(130px,150px));
@@ -160,27 +181,7 @@
     .book a{ display:block; }
     .book a:hover{ text-decoration:none; }
 
-    #contact:target .card{
-      outline:2px solid rgba(158,203,255,.55);
-      box-shadow:0 0 0 6px rgba(158,203,255,.12), var(--shadow);
-    }
-
-    .author-photo{
-      width:min(280px, 85%);
-      border-radius:14px;
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      display:block;
-      margin:0 auto 12px;
-    }
-
-    .author-caption{
-      color:var(--muted);
-      font-size:.95rem;
-      margin:0;
-      text-align:center;
-    }
-
+    /* Links grid */
     .links-grid{
       display:grid;
       grid-template-columns:repeat(2, minmax(0, 1fr));
@@ -202,38 +203,35 @@
       text-decoration:none;
     }
 
-    /* Contact buttons */
-    .contact-line{
+    /* Contact */
+    .contact-row{
       display:flex;
       justify-content:center;
       align-items:center;
       gap:12px;
       flex-wrap:wrap;
-      margin:0;
-    }
-
-    .contact-email{
-      font-weight:700;
-      letter-spacing:.2px;
+      margin-top:10px;
     }
 
     .copy-btn{
-      padding:8px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.02);
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--pill);
+      border:1px solid var(--border);
+      box-shadow:var(--shadowSoft);
       color:var(--text);
-      cursor:pointer;
       font-family:inherit;
       font-size:.95rem;
+      cursor:pointer;
     }
 
-    .copy-btn:hover{ background:rgba(255,255,255,.05); }
+    .copy-btn:hover{ background:var(--pillHover); }
 
     .copy-status{
+      margin-top:10px;
       color:var(--muted);
-      font-size:.95rem;
-      margin:10px 0 0;
+      text-align:center;
+      min-height:1.2em;
     }
 
     @media (max-width:900px){
@@ -262,11 +260,13 @@
 
 <header>
   <h1>Richard Neil Graham</h1>
+
   <div class="tagline">
     I’m a writer and photographer drawn to humor, sports, memoir, and storytelling shaped by place, memory, and lived experience.
   </div>
+
   <div class="intro">
-    <a href="#writing">Start here</a>: selected writing and projects shaped by place and experience.
+    <a href="#writing">Start here</a> for selected writing projects.
   </div>
 
   <nav class="nav">
@@ -278,78 +278,140 @@
   </nav>
 </header>
 
-<section id="author">
+<!-- CAPED PHOTO + ONE LINE -->
+<section id="about">
   <div class="card">
-    <h2>Author</h2>
-    <img class="author-photo" src="images/author.jpg" alt="Richard Neil Graham, author and photographer" loading="lazy">
-    <p class="author-caption">Richard Neil Graham — writer &amp; photographer</p>
+    <img class="author-photo" src="images/author.jpg" alt="Richard Neil Graham" loading="lazy">
+    <p class="author-bio">
+      I’m a writer and photographer drawn to humor, sports, memoir, and stories shaped by place, memory, and lived experience.
+    </p>
   </div>
 </section>
 
+<!-- PHOTOGRAPHY -->
 <section id="photography">
   <div class="card">
     <h2>Photography</h2>
+
     <div class="hero-image">
       <img src="images/chiva-porch-forest-grove-2024.jpg" alt="Chiva on the porch" loading="lazy">
     </div>
 
     <div class="photo-grid">
-      <figure><img src="images/chiva-indoors.jpg" alt="Chiva indoors" loading="lazy"><figcaption>Indoors</figcaption></figure>
-      <figure><img src="images/chiva-on-stump.jpg" alt="Chiva on the stump" loading="lazy"><figcaption>On the stump</figcaption></figure>
-      <figure><img src="images/chiva-running-grass.jpg" alt="Chiva running on grass" loading="lazy"><figcaption>Full speed</figcaption></figure>
-      <figure><img src="images/chiva-with-friend.jpg" alt="Chiva with a friend" loading="lazy"><figcaption>With a friend</figcaption></figure>
+      <figure><img src="images/chiva-indoors.jpg" alt="Chiva indoors" loading="lazy"><figcaption>indoors, afternoon</figcaption></figure>
+      <figure><img src="images/chiva-on-stump.jpg" alt="Chiva on a stump" loading="lazy"><figcaption>on a stump</figcaption></figure>
+      <figure><img src="images/chiva-running-grass.jpg" alt="Chiva running on grass" loading="lazy"><figcaption>full speed, grass</figcaption></figure>
+      <figure><img src="images/chiva-with-friend.jpg" alt="Chiva with a friend" loading="lazy"><figcaption>with a friend</figcaption></figure>
     </div>
   </div>
 </section>
 
+<!-- WRITING -->
 <section id="writing">
   <div class="card">
     <h2>Writing</h2>
     <p class="section-intro" style="color:var(--muted);">
       Humor, satire, and long-form projects in progress — plus the occasional detour into civic absurdity.
     </p>
+
+    <div class="subhead">Graham Cracks</div>
+    <div class="book-grid">
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/graham-cracks-vol-1.jpg" alt="Graham Cracks Volume 1" loading="lazy">
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/graham-cracks-vol-2.jpg" alt="Graham Cracks Volume 2" loading="lazy">
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/graham-cracks-vol-3.jpg" alt="Graham Cracks Volume 3" loading="lazy">
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/graham-cracks-vol-4.jpg" alt="Graham Cracks Volume 4" loading="lazy">
+        </a>
+      </div>
+    </div>
+
+    <div class="subhead">Trumpsters &amp; Traitors</div>
+    <div class="book-grid">
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/trumpsters-traitors-vol-1.jpg" alt="Trumpsters &amp; Traitors Volume 1" loading="lazy">
+        </a>
+      </div>
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/trumpsters-traitors-vol-2.jpg" alt="Trumpsters &amp; Traitors Volume 2" loading="lazy">
+        </a>
+      </div>
+    </div>
+
+    <div class="subhead">Wheelers, Dealers, Pucks &amp; Bucks</div>
+    <div class="book-grid single">
+      <div class="book">
+        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
+          <img src="images/wdpb-cover.jpg" alt="Wheelers, Dealers, Pucks &amp; Bucks" loading="lazy">
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- THE VAULT -->
 <section id="vault">
   <div class="card">
     <h2>The Vault</h2>
     <p class="section-intro" style="color:var(--muted); margin-top:0;">
       A growing archive of earlier work — columns, features, and essays from magazines, sports publications, and independent outlets.
     </p>
+
     <div style="max-width:680px; margin:0 auto; color:var(--muted); text-align:center;">
       Triathlete • Roller Hockey • InLine Hockey News • InlineHockeyCentral.com • Sports Afield • College humor columns
     </div>
   </div>
 </section>
 
+<!-- LINKS -->
 <section id="links">
   <div class="card">
     <h2>Links</h2>
+
     <div class="links-grid">
       <a href="https://www.aol.com" target="_blank" rel="noopener noreferrer">AOL</a>
       <a href="https://richardngraham.blogspot.com/" target="_blank" rel="noopener noreferrer">Blogspot</a>
+
       <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT</a>
       <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+
       <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+
       <a href="https://www.facebook.com/HopeCinema/" target="_blank" rel="noopener noreferrer">Hope Cinema</a>
       <a href="https://www.facebook.com/p/Hope-Icebreakers-Hockey-100070173571445/" target="_blank" rel="noopener noreferrer">Hope Icebreakers</a>
+
       <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="card">
     <h2>Contact</h2>
 
-    <p class="contact-line">
-      <span class="contact-email" id="emailText"></span>
-      <button class="copy-btn" id="copyEmailBtn" type="button">Copy</button>
+    <div class="contact-row">
+      <span id="emailText"></span>
+      <button class="copy-btn" id="copyBtn" type="button">Copy</button>
       <button class="copy-btn" id="gmailBtn" type="button">Email — Compose in Gmail</button>
-    </p>
-    <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+    </div>
+
+    <div class="copy-status" id="copyStatus" aria-live="polite"></div>
   </div>
 </section>
 
@@ -359,50 +421,38 @@
 
 <script>
   (function(){
-    const user = "richardneilgraham";
-    const domain = "gmail.com";
-    const email = user + "@" + domain;
-
-    const emailEl = document.getElementById("emailText");
-    const copyBtn = document.getElementById("copyEmailBtn");
-    const gmailBtn = document.getElementById("gmailBtn");
-    const statusEl = document.getElementById("copyStatus");
-
-    emailEl.textContent = email;
+    const email = "richardneilgraham" + "@" + "gmail.com";
+    document.getElementById("emailText").textContent = email;
 
     function setStatus(msg){
-      statusEl.textContent = msg;
-      if (msg) setTimeout(() => statusEl.textContent = "", 2200);
+      const el = document.getElementById("copyStatus");
+      el.textContent = msg;
+      if(msg){
+        window.clearTimeout(setStatus._t);
+        setStatus._t = window.setTimeout(() => { el.textContent = ""; }, 1400);
+      }
     }
 
-    async function copyEmail(){
+    document.getElementById("copyBtn").addEventListener("click", async () => {
       try{
-        if (navigator.clipboard?.writeText){
+        if(navigator.clipboard?.writeText){
           await navigator.clipboard.writeText(email);
           setStatus("Copied.");
           return;
         }
-        const ta = document.createElement("textarea");
-        ta.value = email;
-        ta.style.position = "absolute";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        document.body.removeChild(ta);
-        setStatus("Copied.");
-      }catch{
-        setStatus("Copy failed — please select and copy.");
+        throw new Error("clipboard unavailable");
+      }catch(e){
+        setStatus("Select + Ctrl+C");
       }
-    }
+    });
 
-    function openGmailCompose(){
-      const url = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(email);
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-
-    copyBtn.addEventListener("click", copyEmail);
-    gmailBtn.addEventListener("click", openGmailCompose);
+    document.getElementById("gmailBtn").addEventListener("click", () => {
+      window.open(
+        "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(email),
+        "_blank",
+        "noopener,noreferrer"
+      );
+    });
   })();
 </script>
 
