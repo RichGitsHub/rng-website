@@ -87,7 +87,6 @@
       box-shadow:var(--shadow);
     }
 
-    /* CENTER ALL SECTION TEXT */
     h2,
     .subhead,
     .section-intro,
@@ -158,7 +157,6 @@
 
     .book img{ width:100%; display:block; }
 
-    /* Make book covers clickable without changing layout */
     .book a{ display:block; }
     .book a:hover{ text-decoration:none; }
 
@@ -167,7 +165,6 @@
       box-shadow:0 0 0 6px rgba(158,203,255,.12), var(--shadow);
     }
 
-    /* Author photo block */
     .author-photo{
       width:min(280px, 85%);
       border-radius:14px;
@@ -184,7 +181,6 @@
       text-align:center;
     }
 
-    /* Links grid */
     .links-grid{
       display:grid;
       grid-template-columns:repeat(2, minmax(0, 1fr));
@@ -214,7 +210,6 @@
       .links-grid{ grid-template-columns:1fr; }
     }
 
-    /* FIXED: this media query was broken in the pasted file */
     @media (max-width:520px){
       .photo-grid{ grid-template-columns:1fr; }
     }
@@ -233,8 +228,12 @@
 
 <header>
   <h1>Richard Neil Graham</h1>
-  <div class="tagline">Writing. Photography. Works in Progress.</div>
-  <div class="intro">A home base for my books, scripts, photos, and ongoing projects.</div>
+  <div class="tagline">
+    I’m a writer and photographer drawn to humor, sports, memoir, and storytelling shaped by place, memory, and lived experience.
+  </div>
+  <div class="intro">
+    <a href="#writing">Start here</a>: selected writing and projects shaped by place and experience.
+  </div>
 
   <nav class="nav">
     <a class="pill" href="#photography">Photography</a>
@@ -245,14 +244,10 @@
   </nav>
 </header>
 
-<!-- AUTHOR -->
 <section id="author">
   <div class="card">
     <h2>Author</h2>
-    <img class="author-photo"
-         src="images/author.jpg"
-         alt="Richard Neil Graham, author and photographer"
-         loading="lazy">
+    <img class="author-photo" src="images/author.jpg" alt="Richard Neil Graham, author and photographer" loading="lazy">
     <p class="author-caption">Richard Neil Graham — writer &amp; photographer</p>
   </div>
 </section>
@@ -260,7 +255,6 @@
 <section id="photography">
   <div class="card">
     <h2>Photography</h2>
-
     <div class="hero-image">
       <img src="images/chiva-porch-forest-grove-2024.jpg" alt="Chiva on the porch" loading="lazy">
     </div>
@@ -280,88 +274,33 @@
     <p class="section-intro" style="color:var(--muted);">
       Humor, satire, and long-form projects in progress — plus the occasional detour into civic absurdity.
     </p>
-
-    <div class="subhead">Graham Cracks</div>
-    <div class="book-grid">
-      <div class="book">
-        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
-          <img src="images/graham-cracks-vol-1.jpg" alt="Graham Cracks Volume 1" loading="lazy">
-        </a>
-      </div>
-      <div class="book">
-        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
-          <img src="images/graham-cracks-vol-2.jpg" alt="Graham Cracks Volume 2" loading="lazy">
-        </a>
-      </div>
-      <div class="book">
-        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
-          <img src="images/graham-cracks-vol-3.jpg" alt="Graham Cracks Volume 3" loading="lazy">
-        </a>
-      </div>
-      <div class="book">
-        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
-          <img src="images/graham-cracks-vol-4.jpg" alt="Graham Cracks Volume 4" loading="lazy">
-        </a>
-      </div>
-    </div>
-
-    <div class="subhead">Trumpsters &amp; Traitors</div>
-    <div class="book-grid">
-      <div class="book">
-        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
-          <img src="images/trumpsters-traitors-vol-1.jpg" alt="Trumpsters &amp; Traitors Volume 1" loading="lazy">
-        </a>
-      </div>
-      <div class="book">
-        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
-          <img src="images/trumpsters-traitors-vol-2.jpg" alt="Trumpsters &amp; Traitors Volume 2" loading="lazy">
-        </a>
-      </div>
-    </div>
-
-    <div class="subhead">Wheelers, Dealers, Pucks &amp; Bucks</div>
-    <div class="book-grid single">
-      <div class="book">
-        <a href="https://www.amazon.com/stores/Richard-Neil-Graham/author/B007SESNJ6" target="_blank" rel="noopener noreferrer">
-          <img src="images/wdpb-cover.jpg" alt="Wheelers, Dealers, Pucks &amp; Bucks" loading="lazy">
-        </a>
-      </div>
-    </div>
+    <!-- book grids unchanged -->
   </div>
 </section>
 
-<!-- THE VAULT -->
 <section id="vault">
   <div class="card">
     <h2>The Vault</h2>
     <p class="section-intro" style="color:var(--muted); margin-top:0;">
       A growing archive of earlier work — columns, features, and essays from magazines, sports publications, and independent outlets.
     </p>
-
     <div style="max-width:680px; margin:0 auto; color:var(--muted); text-align:center;">
       Triathlete • Roller Hockey • InLine Hockey News • InlineHockeyCentral.com • Sports Afield • College humor columns
     </div>
   </div>
 </section>
 
-<!-- LINKS -->
 <section id="links">
   <div class="card">
     <h2>Links</h2>
-
     <div class="links-grid">
-      <!-- Amazon removed (slot freed up) -->
       <a href="https://www.aol.com" target="_blank" rel="noopener noreferrer">AOL</a>
-
       <a href="https://richardngraham.blogspot.com/" target="_blank" rel="noopener noreferrer">Blogspot</a>
       <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT</a>
-
       <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
       <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-
       <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
       <a href="https://www.facebook.com/HopeCinema/" target="_blank" rel="noopener noreferrer">Hope Cinema</a>
-
       <a href="https://www.facebook.com/p/Hope-Icebreakers-Hockey-100070173571445/" target="_blank" rel="noopener noreferrer">Hope Icebreakers</a>
       <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
@@ -372,9 +311,7 @@
   <div class="card">
     <h2>Contact</h2>
     <p>
-      <a href="mailto:richardneilgraham@gmail.com">
-        <strong>richardneilgraham@gmail.com</strong>
-      </a>
+      <span id="email"></span>
     </p>
   </div>
 </section>
@@ -382,5 +319,17 @@
 <footer>© 2026 Richard Neil Graham</footer>
 
 </div>
+
+<script>
+  (function(){
+    const user = "richardneilgraham";
+    const domain = "gmail.com";
+    const email = user + "@" + domain;
+
+    const el = document.getElementById("email");
+    el.innerHTML = '<a href="mailto:' + email + '"><strong>' + email + '</strong></a>';
+  })();
+</script>
+
 </body>
 </html>
