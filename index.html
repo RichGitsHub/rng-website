@@ -202,7 +202,7 @@
       text-decoration:none;
     }
 
-    /* Contact: subtle copy button */
+    /* Contact buttons */
     .contact-line{
       display:flex;
       justify-content:center;
@@ -210,6 +210,11 @@
       gap:12px;
       flex-wrap:wrap;
       margin:0;
+    }
+
+    .contact-email{
+      font-weight:700;
+      letter-spacing:.2px;
     }
 
     .copy-btn{
@@ -303,7 +308,6 @@
     <p class="section-intro" style="color:var(--muted);">
       Humor, satire, and long-form projects in progress — plus the occasional detour into civic absurdity.
     </p>
-    <!-- book grids unchanged -->
   </div>
 </section>
 
@@ -341,8 +345,9 @@
     <h2>Contact</h2>
 
     <p class="contact-line">
-      <strong><span id="emailText"></span></strong>
+      <span class="contact-email" id="emailText"></span>
       <button class="copy-btn" id="copyEmailBtn" type="button">Copy</button>
+      <button class="copy-btn" id="gmailBtn" type="button">Email — Compose in Gmail</button>
     </p>
     <p class="copy-status" id="copyStatus" aria-live="polite"></p>
   </div>
@@ -354,33 +359,31 @@
 
 <script>
   (function(){
-    // Bot-resistant: do NOT place the full email in the HTML.
     const user = "richardneilgraham";
     const domain = "gmail.com";
     const email = user + "@" + domain;
 
     const emailEl = document.getElementById("emailText");
-    const btn = document.getElementById("copyEmailBtn");
+    const copyBtn = document.getElementById("copyEmailBtn");
+    const gmailBtn = document.getElementById("gmailBtn");
     const statusEl = document.getElementById("copyStatus");
 
     emailEl.textContent = email;
 
     function setStatus(msg){
       statusEl.textContent = msg;
-      if (msg) setTimeout(function(){ statusEl.textContent = ""; }, 2200);
+      if (msg) setTimeout(() => statusEl.textContent = "", 2200);
     }
 
     async function copyEmail(){
       try{
-        if (navigator.clipboard && navigator.clipboard.writeText){
+        if (navigator.clipboard?.writeText){
           await navigator.clipboard.writeText(email);
           setStatus("Copied.");
           return;
         }
-        // Fallback
         const ta = document.createElement("textarea");
         ta.value = email;
-        ta.setAttribute("readonly", "");
         ta.style.position = "absolute";
         ta.style.left = "-9999px";
         document.body.appendChild(ta);
@@ -388,12 +391,18 @@
         document.execCommand("copy");
         document.body.removeChild(ta);
         setStatus("Copied.");
-      }catch(e){
+      }catch{
         setStatus("Copy failed — please select and copy.");
       }
     }
 
-    btn.addEventListener("click", copyEmail);
+    function openGmailCompose(){
+      const url = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(email);
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    copyBtn.addEventListener("click", copyEmail);
+    gmailBtn.addEventListener("click", openGmailCompose);
   })();
 </script>
 
