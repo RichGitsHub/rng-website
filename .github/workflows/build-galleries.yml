@@ -1,1 +1,32 @@
+name: Build galleries
 
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate gallery pages
+        run: node scripts/build-galleries.js
+
+      - name: Commit generated galleries (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add galleries/*.html
+          git diff --cached --quiet || git commit -m "Auto-generate galleries"
+          git push
