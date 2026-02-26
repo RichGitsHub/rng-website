@@ -101,11 +101,13 @@ function buildHTML({ title, subtitle, items, sectionKey }) {
     }
     .pill:hover{ background:var(--pillHover); text-decoration:none; }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-    }
+figure img{
+  width:100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display:block;
+  transition: transform .35s ease, filter .35s ease;
+}
     figure{
       margin:0;
       border-radius:14px;
@@ -115,13 +117,7 @@ function buildHTML({ title, subtitle, items, sectionKey }) {
       background:rgba(255,255,255,.02);
       cursor:pointer;
     }
-    figure img{
-      width:100%;
-      height:210px;
-      object-fit:cover;
-      display:block;
-      transition: transform .35s ease, filter .35s ease;
-    }
+  
     figure:hover img{
       transform: scale(1.05);
       filter: brightness(1.05);
