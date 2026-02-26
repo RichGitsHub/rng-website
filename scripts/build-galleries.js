@@ -105,6 +105,7 @@ figure img{
   width:100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  object-position: center top;
   display:block;
   transition: transform .35s ease, filter .35s ease;
 }
